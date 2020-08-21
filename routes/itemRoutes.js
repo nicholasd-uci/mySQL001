@@ -7,16 +7,22 @@ const { join } = require('path')
 const fs = require('fs')
 
 
+
+// Get all items
 router.get('/items', (req, res) => {
-    fs.readFile(join(__dirname, '..', 'db', 'db.json'), 'utf8', (err, data) => {
+    db.query('SELECT * FROM items', (err, items) => {
         if (err) { console.log(err) }
-        res.json(JSON.parse(data))
+        res.json(items)
     })
-})
+})    
+
 
 // Post one item
 router.post('/items/', (req, res) => {
-
+    db.query('INSERT INTO items SET ?', req.body, (err, results) => {
+        if (err) { console.log(err) }
+        
+    })
 })
 
 // put one item
