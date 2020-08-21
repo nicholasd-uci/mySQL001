@@ -5,7 +5,8 @@
   "main": "server.js",
   "dependencies": {
     "express": "^4.17.1",
-    "init": "^0.1.2"
+    "init": "^0.1.2",
+    "mysql2": "^2.1.0"
   },
   "devDependencies": {},
   "scripts": {

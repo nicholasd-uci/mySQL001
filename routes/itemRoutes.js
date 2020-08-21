@@ -1,9 +1,11 @@
 // file name can be anything! 
 
 const router = require('express').Router()
+const db = require('../db')
 
 const { join } = require('path')
 const fs = require('fs')
+
 
 router.get('/items', (req, res) => {
     fs.readFile(join(__dirname, '..', 'db', 'db.json'), 'utf8', (err, data) => {
@@ -26,3 +28,5 @@ router.put('/items/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
 
 })
+
+module.exports = router
