@@ -1,10 +1,14 @@
-// brought in npm i mysql
+// npm init -y
+// npm i inquirer 
+// npm i express
+// npm i mysql2
 
 const express = require('express')
+const { join } = require('path')
 
 const app = express()
 
-// return the full obj and not just the first value
+app.use(express.static(join(__dirname, 'public')))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
